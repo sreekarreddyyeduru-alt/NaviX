@@ -61,16 +61,10 @@ html,body{height:100%;font-family:'Inter',sans-serif;background:#0d1117;color:#e
 <header style="background:#161b22;border-bottom:1px solid #21262d;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:62px;shrink:0;z-index:50;position:relative">
 
   <!-- Logo -->
-  <a href="{{ url_for('dashboard') if user_email else url_for('auth.login') }}" style="display:flex;align-items:center;text-decoration:none">
-    <img src="https://raw.githubusercontent.com/sreekarreddyyeduru-alt/NaviX../main/navix-wordmark.png"
-         onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'"
-         alt="NaviX" style="height:52px;width:auto"/>
-    <div style="display:none;align-items:center;gap:8px">
-      <div style="background:#f5a623;color:#0d1117;font-weight:900;font-size:16px;padding:4px 10px;border-radius:6px">N</div>
-      <span style="font-weight:800;font-size:18px;color:#e6edf3">NAVIX</span>
-    </div>
-  </a>
-
+<a href="{{ url_for('dashboard') if user_email else url_for('auth.login') }}" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+  <img src="{{ url_for('static', filename='icons/navix-mark.png') }}" style="height:38px;width:38px;object-fit:contain;mix-blend-mode:screen;filter:brightness(2);">
+  <img src="{{ url_for('static', filename='icons/navix-wordmark.png') }}" style="height:30px;width:auto;object-fit:contain;mix-blend-mode:screen;filter:brightness(2);">
+</a>
   <!-- Nav -->
   <nav class="nav-tabs" style="display:flex;align-items:center;gap:2px">
     <a class="tab {% if active=='dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">Dashboard</a>
